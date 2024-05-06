@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Entry 역할
@@ -14,27 +15,47 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: Text(
-              '앱 타이틀',
-            style: TextStyle(color: Colors.white),
-          ),
+          actions: [
+            Icon(Icons.star),
+            Icon(Icons.star),
+            Icon(Icons.star)
+          ]
         ),
         body: Container(
-          child: Text('본문'),
-        ),
-        bottomNavigationBar: BottomAppBar(
+          padding: EdgeInsets.all(10),
           child: SizedBox(
-            height: 10,
+            height: 100,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(Icons.phone),
-                Icon(Icons.message),
-                Icon(Icons.contact_page),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: Image.asset(
+                      width: 100,
+                      height: 100,
+                      'CF_Black.png'),
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('캐논 DSLR 100D (단렌즈, 충전기 16기가SD 포함)'),
+                      Text('성동구 행당동 끌올 10분 전'),
+                      Text('210,000원'),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Icon(Icons.favorite),
+                          Text('4')
+                        ],
+                      )
+
+                    ],
+                  ),
+                )
               ],
             ),
           ),
-        ),
+        )
       )
     );
 
